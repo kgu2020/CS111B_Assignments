@@ -16,7 +16,7 @@ public class Staff
         staffList = new StaffMember[6];
 
         staffList[0] = new Executive("Sam", "123 Main Line",
-                "555-0469", "123-45-6789", 2423.07);
+                "555-0469", "123-45-6789", 2423.07, 2);
 
         staffList[1] = new Employee("Carla", "456 Off Line",
                 "555-0101", "987-65-4321", 1246.15);
@@ -48,7 +48,7 @@ public class Staff
             System.out.println(staffList[count]);
 
             amount = staffList[count].pay();  // polymorphic
-
+            System.out.println(staffList[count].vacation());
             if (amount == 0.0)
                 System.out.println("Thanks!");
             else

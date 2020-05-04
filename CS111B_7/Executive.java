@@ -7,16 +7,16 @@
 public class Executive extends Employee
 {
     private double bonus;
-
+    private int extraVacation;
     //-----------------------------------------------------------------
     //  Constructor: Sets up this executive with the specified
     //  information.
     //-----------------------------------------------------------------
     public Executive(String eName, String eAddress, String ePhone,
-            String socSecNumber, double rate)
+            String socSecNumber, double rate, int extraDays)
     {
         super(eName, eAddress, ePhone, socSecNumber, rate);
-
+        extraVacation = extraDays;
         bonus = 0;  // bonus has yet to be awarded
     }
 
@@ -39,5 +39,8 @@ public class Executive extends Employee
         bonus = 0;
 
         return payment;
+    }
+    public int vacation(){
+      return STANDARD_VACATION + extraVacation;
     }
 }

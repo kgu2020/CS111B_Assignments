@@ -41,6 +41,9 @@ public class Hourly extends Employee
         return payment;
     }
 
+    public int vacation(){
+      return STANDARD_VACATION - 7;
+    }
     //-----------------------------------------------------------------
     //  Returns information about this hourly employee as a string.
     //-----------------------------------------------------------------

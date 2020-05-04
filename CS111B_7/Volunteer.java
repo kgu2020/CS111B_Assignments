@@ -22,4 +22,8 @@ public class Volunteer extends StaffMember
     {
         return 0.0;
     }
+
+    public int vacation(){
+      return 0;
+    }
 }

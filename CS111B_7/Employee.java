@@ -41,4 +41,8 @@ public class Employee extends StaffMember
     {
         return payRate;
     }
+
+    public int vacation(){
+      return STANDARD_VACATION;
+    }
 }

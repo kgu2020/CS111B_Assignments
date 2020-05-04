@@ -4,7 +4,7 @@
 //  Represents a generic staff member.
 //********************************************************************
 
-abstract public class StaffMember
+abstract public class StaffMember implements Payable, VacationTime
 {
     protected String name;
     protected String address;
@@ -33,10 +33,8 @@ abstract public class StaffMember
 
         return result;
     }
-
     //-----------------------------------------------------------------
     //  Derived classes must define the pay method for each type of
     //  employee.
     //-----------------------------------------------------------------
-    public abstract double pay();
 }
