@@ -12,19 +12,19 @@ public class Sorting<T>
     //-----------------------------------------------------------------
     public void selectionSort(Comparable<T>[] list)
     {
-        int min;
+        int max;
         Comparable<T> temp;
 
         for (int index = 0; index < list.length-1; index++)
         {
-            min = index;
+            max = index;
             for (int scan = index+1; scan < list.length; scan++)
-                if (list[scan].compareTo((T)list[min]) < 0)
-                    min = scan;
+                if (list[scan].compareTo((T)list[max]) > 0)
+                    max = scan;
 
             // Swap the values
-            temp = list[min];
-            list[min] = list[index];
+            temp = list[max];
+            list[max] = list[index];
             list[index] = temp;
         }
     }

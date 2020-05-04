@@ -52,7 +52,7 @@ public class Staff
             System.out.println(staffList[count]);
 
             amount = staffList[count].pay();  // polymorphic
-            System.out.println(staffList[count].vacation());
+            System.out.println("Vacation days available: " + staffList[count].vacation());
             if (amount == 0.0)
                 System.out.println("Thanks!");
             else
