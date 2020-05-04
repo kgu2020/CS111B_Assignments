@@ -36,6 +36,10 @@ public class Staff
         ((Hourly)staffList[3]).addHours(40);
     }
 
+    public void sort(){
+      Sorting<StaffMember> sort = new Sorting<StaffMember>();
+      sort.selectionSort(staffList);
+    }
     //-----------------------------------------------------------------
     //  Pays all staff members.
     //-----------------------------------------------------------------

@@ -4,7 +4,7 @@
 //  Represents a generic staff member.
 //********************************************************************
 
-abstract public class StaffMember implements Payable, VacationTime
+abstract public class StaffMember implements Payable, VacationTime, Comparable<StaffMember>
 {
     protected String name;
     protected String address;
@@ -21,6 +21,18 @@ abstract public class StaffMember implements Payable, VacationTime
         phone = ePhone;
     }
 
+    public String getName(){
+      return name;
+    }
+
+    public int compareTo(StaffMember b){
+      if ((this.getName().compareTo(b.getName()) < 0))
+        return -1;
+      else if ((this.getName().compareTo(b.getName())) == 0)
+        return 0;
+      else
+        return 1;
+    }
     //-----------------------------------------------------------------
     //  Returns a string including the basic employee information.
     //-----------------------------------------------------------------
