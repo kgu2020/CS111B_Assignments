@@ -1,22 +1,24 @@
-//********************************************************************
-//  Staff.java       Author: Lewis/Loftus
-//
-//  Represents the personnel staff of a particular business.
-//********************************************************************
-
+/**
+* The Staff class simulates a
+* list of staff in a firm.
+*
+* @author  Ken Gu
+* @version 1.0
+* @since   2020-05-04
+*/
 public class Staff
 {
     private StaffMember[] staffList;
 
-    //-----------------------------------------------------------------
-    //  Constructor: Sets up the list of staff members.
-    //-----------------------------------------------------------------
+    /**
+    * Constructor: Sets up the list of staff members.
+    */
     public Staff()
     {
         staffList = new StaffMember[6];
 
         staffList[0] = new Executive("Sam", "123 Main Line",
-                "555-0469", "123-45-6789", 2423.07, 2);
+                "555-0469", "123-45-6789", 2423.07, 12);
 
         staffList[1] = new Employee("Carla", "456 Off Line",
                 "555-0101", "987-65-4321", 1246.15);
@@ -32,17 +34,22 @@ public class Staff
                 "555-7282");
 
         ((Executive)staffList[0]).awardBonus(500.00);
-
         ((Hourly)staffList[3]).addHours(40);
     }
 
+    /**
+    * Sorts staffList by using the Sorting class.
+    * @return void
+    */
     public void sort(){
       Sorting<StaffMember> sort = new Sorting<StaffMember>();
       sort.selectionSort(staffList);
     }
-    //-----------------------------------------------------------------
-    //  Pays all staff members.
-    //-----------------------------------------------------------------
+
+    /**
+    * Pays all staff members and displays info.
+    * @return void
+    */
     public void payday ()
     {
         double amount;
@@ -52,12 +59,11 @@ public class Staff
             System.out.println(staffList[count]);
 
             amount = staffList[count].pay();  // polymorphic
-            System.out.println("Vacation days available: " + staffList[count].vacation());
             if (amount == 0.0)
                 System.out.println("Thanks!");
             else
                 System.out.println("Paid: " + amount);
-
+            System.out.println("Vacation days available: " + staffList[count].vacation());
             System.out.println("-----------------------------------");
         }
     }

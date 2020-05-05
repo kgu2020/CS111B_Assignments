@@ -1,17 +1,19 @@
-//********************************************************************
-//  Hourly.java       Author: Lewis/Loftus
-//
-//  Represents an employee that gets paid by the hour.
-//********************************************************************
-
+/**
+* The Hourly class simulates a
+* hourly-paid employee of a firm; Hourly is an employee
+*
+* @author  Ken Gu
+* @version 1.0
+* @since   2020-05-04
+*/
 public class Hourly extends Employee
 {
     private int hoursWorked;
 
-    //-----------------------------------------------------------------
-    //  Constructor: Sets up this hourly employee using the specified
-    //  information.
-    //-----------------------------------------------------------------
+    /**
+    * Constructor for a Hourly staff.
+    * @see Employee()
+    */
     public Hourly(String eName, String eAddress, String ePhone,
             String socSecNumber, double rate)
     {
@@ -20,18 +22,21 @@ public class Hourly extends Employee
         hoursWorked = 0;
     }
 
-    //-----------------------------------------------------------------
-    //  Adds the specified number of hours to this employee's
-    //  accumulated hours.
-    //-----------------------------------------------------------------
+    /**
+    * Adds the specified number of hours
+    * to this employee's accumulated hours.
+    * @param moreHours An int containing amount of worked hours.
+    * @return void
+    */
     public void addHours(int moreHours)
     {
         hoursWorked += moreHours;
     }
 
-    //-----------------------------------------------------------------
-    //  Computes and returns the pay for this hourly employee.
-    //-----------------------------------------------------------------
+    /**
+    * Computes and returns the pay for a Hourly staff; polymorphic.
+    * @return double Returns the payment amount.
+    */
     public double pay()
     {
         double payment = payRate * hoursWorked;
@@ -41,12 +46,22 @@ public class Hourly extends Employee
         return payment;
     }
 
+    /**
+    * Computes and returns vacation duration for a Hourly staff;
+    * polymorphic.
+    * @return int Returns standard vacation amount - 7 days.
+    * @see vacation() in Employee.java
+    */
     public int vacation(){
       return STANDARD_VACATION - 7;
     }
-    //-----------------------------------------------------------------
-    //  Returns information about this hourly employee as a string.
-    //-----------------------------------------------------------------
+
+    /**
+    * toString method for Hourly; uses Employee's
+    * toString aswell.
+    * @return String A variable containing the employee's info
+    * @see toString() in Employee.java
+    */
     public String toString()
     {
         String result = super.toString();

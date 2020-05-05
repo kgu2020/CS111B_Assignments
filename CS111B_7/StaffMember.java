@@ -1,19 +1,22 @@
-//********************************************************************
-//  StaffMember.java       Author: Lewis/Loftus
-//
-//  Represents a generic staff member.
-//********************************************************************
-
+/**
+* The StaffMember class represents a
+* generic staff in a firm; StaffMember uses three interfaces
+*
+* @author  Ken Gu
+* @version 1.0
+* @since   2020-05-04
+*/
 abstract public class StaffMember implements Payable, VacationTime, Comparable<StaffMember>
 {
     protected String name;
     protected String address;
     protected String phone;
 
-    //-----------------------------------------------------------------
-    //  Constructor: Sets up this staff member using the specified
-    //  information.
-    //-----------------------------------------------------------------
+    /**
+    * StaffMember()
+    * Constructor: Sets up this staff member using the specified
+    * information.
+    */
     public StaffMember(String eName, String eAddress, String ePhone)
     {
         name = eName;
@@ -21,10 +24,19 @@ abstract public class StaffMember implements Payable, VacationTime, Comparable<S
         phone = ePhone;
     }
 
+    /**
+    * Returns the name of a staff member.
+    * @return String The instance data name.
+    */
     public String getName(){
       return name;
     }
 
+    /**
+    * Compares two StaffMember objects by their names
+    * @param b A StaffMember object.
+    * @return int -1 if self object preceeds b in ASCII, 0 if equal, else 1.
+    */
     public int compareTo(StaffMember b){
       if ((this.getName().compareTo(b.getName()) < 0))
         return -1;
@@ -33,9 +45,12 @@ abstract public class StaffMember implements Payable, VacationTime, Comparable<S
       else
         return 1;
     }
-    //-----------------------------------------------------------------
-    //  Returns a string including the basic employee information.
-    //-----------------------------------------------------------------
+
+    /**
+    * toString()
+    * Returns a String containing the staff member's info.
+    * @return String result, a variable with the object's info.
+    */
     public String toString()
     {
         String result = "Name: " + name + "\n";
@@ -45,8 +60,4 @@ abstract public class StaffMember implements Payable, VacationTime, Comparable<S
 
         return result;
     }
-    //-----------------------------------------------------------------
-    //  Derived classes must define the pay method for each type of
-    //  employee.
-    //-----------------------------------------------------------------
 }
